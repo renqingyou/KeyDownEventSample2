@@ -27,7 +27,7 @@ public class MyButton extends AppCompatButton {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         //Log.e("rqy", "dispatchKeyEvent-a=" + a + "--" + this + event.getAction() + "-" + event.getKeyCode());
-        if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
             Log.e("rqy", "dispatchKeyEvent--MyButton--我是 MyButton 类的 Log");
         }
         return super.dispatchKeyEvent(event);

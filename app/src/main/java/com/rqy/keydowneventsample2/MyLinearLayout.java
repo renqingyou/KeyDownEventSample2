@@ -41,28 +41,20 @@ public class MyLinearLayout extends LinearLayout {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         //Log.e("rqy", "dispatchKeyEvent-a=" + a + "--" + this + event.getAction() + "-" + event.getKeyCode());
-        if (event.getKeyCode() == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-            for (int i = 0; i < this.getChildCount(); i++) {
-                View view = this.getChildAt(i);
-                if (view.hasFocus()) {
-                    Button button = (Button) view;
-                    Log.e("rqy","dispatchKeyEvent--MyLinearLayout--"+ button.getText().toString());
-                }
-            }
+        if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+            View view = findFocus();
+            Log.e("rqy", "dispatchKeyEvent--MyLinearLayout--" + view);
         }
         return super.dispatchKeyEvent(event);
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        /*for (int i = 0; i < this.getChildCount(); i++) {
-            View view = this.getChildAt(i);
-            if (view.hasFocus()) {
-                Button button = (Button) view;
-                Log.e("rqy", button.getText().toString());
-            }
-        }*/
-        Log.e("rqy", "onKeyDown--MyLinearLayout--" + keyCode + "--" + this);
+        if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+            View view = findFocus();
+            Log.e("rqy", "onKeyDown--view=" + view);
+        }
+        Log.e("rqy", "onKeyDown--" + this);
         return super.onKeyDown(keyCode, event);
     }
 
