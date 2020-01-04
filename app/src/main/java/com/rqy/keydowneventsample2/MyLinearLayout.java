@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
 
@@ -69,8 +68,7 @@ public class MyLinearLayout extends LinearLayout {
             for (int i = 0; i < this.getChildCount(); i++) {
                 View view = this.getChildAt(i);
                 if (isTouchPointInView(view, (int) event.getRawX(), (int) event.getRawY())) {
-                    Button button = (Button) view;
-                    Log.e("rqy", button.getText().toString());
+                    Log.e("rqy", view + "");
                 }
             }
         }

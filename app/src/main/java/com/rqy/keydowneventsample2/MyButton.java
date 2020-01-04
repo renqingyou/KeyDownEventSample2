@@ -36,7 +36,7 @@ public class MyButton extends AppCompatButton {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.e("rqy", "onKeyDown--MyButton--" + keyCode + "--" + this);
-        return super.onKeyDown(keyCode, event);
+        return false;
     }
 
     @Override
