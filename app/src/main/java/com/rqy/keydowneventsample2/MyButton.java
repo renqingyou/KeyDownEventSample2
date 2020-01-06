@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 
 import androidx.appcompat.widget.AppCompatButton;
 
@@ -22,6 +23,12 @@ public class MyButton extends AppCompatButton {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("rqy", "我被点击了--"+getText());
+            }
+        });
     }
 
     @Override
@@ -36,7 +43,7 @@ public class MyButton extends AppCompatButton {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         Log.e("rqy", "onKeyDown--MyButton--" + keyCode + "--" + this);
-        return true;
+        return false;
     }
 
     @Override

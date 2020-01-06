@@ -1,5 +1,6 @@
 package com.rqy.keydowneventsample2;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -37,4 +38,12 @@ public class MainActivity extends BaseActivity {
         }
         return super.dispatchKeyEvent(event);
     }
+
+    public void trackViewOnClick(Activity activity, KeyEvent event){
+        if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
+            android.view.View v = activity.getWindow().getDecorView().findFocus();
+            Log.e("rqy", "MainActivity-dispatchKeyEvent-" + v);
+        }
+    }
+
 }
