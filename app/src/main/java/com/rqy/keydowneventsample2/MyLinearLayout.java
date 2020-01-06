@@ -23,18 +23,24 @@ public class MyLinearLayout extends LinearLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        findViewById(R.id.custom1).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("rqy", "MyLinearLayout button1 被点击了");
-            }
-        });
-        findViewById(R.id.custom2).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("rqy", "MyLinearLayout button2 被点击了");
-            }
-        });
+        View custom1 = findViewById(R.id.custom1);
+        if (custom1 != null) {
+            custom1.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.e("rqy", "MyLinearLayout button1 被点击了");
+                }
+            });
+        }
+        View custom2 = findViewById(R.id.custom2);
+        if (custom2 != null) {
+            custom2.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.e("rqy", "MyLinearLayout button2 被点击了");
+                }
+            });
+        }
     }
 
     @Override
