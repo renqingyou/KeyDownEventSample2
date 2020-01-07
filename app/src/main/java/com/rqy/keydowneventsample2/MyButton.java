@@ -33,7 +33,7 @@ public class MyButton extends AppCompatButton {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
-        //Log.e("rqy", "dispatchKeyEvent-a=" + a + "--" + this + event.getAction() + "-" + event.getKeyCode());
+        Log.e("rqy", "MyButton--dispatchKeyEvent-a=" + "--" + this + event.getAction() + "-" + event.getKeyCode());
         if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
             Log.e("rqy", "dispatchKeyEvent--MyButton--"+getText());
         }

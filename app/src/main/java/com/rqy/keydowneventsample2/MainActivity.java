@@ -24,19 +24,13 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        android.view.View v = getWindow().getDecorView().findFocus();
-        Log.e("rqy", "MainActivity-dispatchTouchEvent-" + v);
-        return super.dispatchTouchEvent(ev);
-    }
-
-    @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_CENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
             android.view.View v = getWindow().getDecorView().findFocus();
             Log.e("rqy", "MainActivity-dispatchKeyEvent-" + v);
         }
-        return super.dispatchKeyEvent(event);
+        return false;
+        //return 453;
     }
 
     public void trackViewOnClick(Activity activity, KeyEvent event){
